@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  testnet:
+    build:
+      context: .
+    volumes:
+      - geth_vol/:/usr/src/app/geth
+      - keystore_vol:/usr/src/app/keystore
+      - ethash_vol:/root/.ethash
+    ports:
+      - 8545:8545
+      - 30303:30303
+
+volumes:
+  geth_vol:
+  keystore_vol:
+  ethash_vol:
